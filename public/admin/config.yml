@@ -1,3 +1,5 @@
 backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to main)
+  repo: hetd54/testing-static-cms
+  base_url: https://staticcmstest.web.app
