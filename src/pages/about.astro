@@ -2,11 +2,11 @@
 import Layout from '../layouts/BlogPost.astro';
 import { getCollection } from 'astro:content';
 
-const aboutPage = (await getCollection('about')).find((page) => page.slug === 'about')
+const aboutPage = (await getCollection('about')).find((page) => page.slug === 'about');
 ---
 
 <Layout
-	title={aboutPage.data.title}
+	title={aboutPage!.data!.title}
 	description="Lorem ipsum dolor sit amet"
 	pubDate={new Date('August 08 2021')}
 	heroImage="/images/blog-placeholder-about.jpg"
