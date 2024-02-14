@@ -4,12 +4,11 @@ backend:
   name: github
   branch: main # Branch to update (optional; defaults to main)
   repo: hetd54/testing-static-cms
-  base_url: http://localhost:8081/
-media_folder: images/
+media_folder: public/images
 collections:
   - name: 'blog' # Used in routes, e.g., /admin/collections/blog
     label: 'Blog' # Used in the UI
-    folder: '_posts/blog' # The path to the folder where the documents are stored
+    folder: 'src/content/blog' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}' # Filename template, e.g., yyyy-MM-dd-title.md
     fields: # The fields for each document, usually in front matter
@@ -19,3 +18,12 @@ collections:
       - { label: 'Featured Image', name: 'thumbnail', widget: 'image' }
       - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  - about: 'about'
+    label: 'About'
+    folder: 'src/content/about'
+    create: false
+    slug: 'about'
+    fields:
+      - {label: 'Featured Image', name: 'thumbnail', widget: 'image'}
+      - {label: 'Title', name: 'title', widget: 'string' }
+      - {label: 'Body', name: 'body', widget: 'markdown'}
